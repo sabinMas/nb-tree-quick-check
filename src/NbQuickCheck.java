@@ -12,8 +12,17 @@ public class NbQuickCheck {
    */
   public static void preOrder(Map<Integer, List<Integer>> tree, int root) {
     if(!tree.containsKey(root)) {
-      return;
+       return;
     }
+    //we visit current node first for preorder 
+    System.out.println(root);
+
+    //get children for each current node 
+    for(int child : tree.get(root)){
+      //then recusre through for each child and it's extended children
+      preOrder(tree, child);
+    }
+
   }
 
   /**
